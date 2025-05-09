@@ -1,0 +1,33 @@
+@use './variables'as v;
+
+// ----------------------------------
+// baseスタイル
+// ----------------------------------
+body {
+  font-family: v.$f-main;
+  @include v.rem(16);
+  font-weight: 400;
+  line-height: v.$lh-main;
+  color: v.$c-black;
+}
+
+a,
+a i {
+  color: v.$c-white;
+  text-decoration: none;
+}
+
+a:hover,
+a i:hover {
+  color: v.$c-hover;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  list-style: none;
+}

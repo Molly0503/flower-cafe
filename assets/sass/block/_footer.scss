@@ -1,0 +1,30 @@
+@use '../foundation/variables'as v;
+
+.footer {
+  background-color: v.$c-main;
+  font-family: v.$f-en;
+  text-align: center;
+
+  @include v.mq() {
+    @include v.rem(20);
+  }
+
+  &-menu {
+    margin-bottom: 20px;
+
+    @include v.mq() {
+      margin-bottom: 25px;
+    }
+
+    &-list {
+      display: flex;
+      column-gap: 30px;
+      justify-content: center;
+    }
+  }
+
+  small {
+    color: v.$c-footer;
+    @include v.rem(12);
+  }
+}

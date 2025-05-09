@@ -1,0 +1,60 @@
+@use '../foundation/variables'as v;
+
+.menu {
+  &-container {
+    display: flex;
+    column-gap: 15px;
+    row-gap: 26px;
+    flex-wrap: wrap;
+
+    @include v.mq() {
+      column-gap: 30px;
+      row-gap: 50px;
+
+    }
+  }
+
+
+  &-item {
+    width: calc((100% - 15px) / 2);
+
+    @include v.mq() {
+      width: calc((100% - 60px) / 3);
+    }
+
+    &-img {
+      cursor: pointer;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        transition: transform .6s ease;
+        /* ゆっくり変化させる */
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+        /* 拡大 */
+      }
+    }
+
+    &-name {
+      @include v.rem(13);
+      color: v.$c-main;
+
+      @include v.mq() {
+        @include v.rem(16);
+      }
+    }
+
+    &-price {
+      @include v.rem(12);
+
+      @include v.mq() {
+        @include v.rem(14);
+      }
+
+    }
+  }
+}
