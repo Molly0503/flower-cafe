@@ -1,0 +1,55 @@
+@use '../foundation/variables'as v;
+
+.recruit {
+
+  &-title {
+    text-align: center;
+    @include v.rem(18);
+
+    @include v.mq() {
+      @include v.rem(24);
+    }
+  }
+
+  &-unit {
+    @include v.rem(15);
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    padding-block: 20px;
+    border-bottom: #e2e2e2 1px solid;
+
+    @include v.mq() {
+      grid-template-columns: auto 1fr;
+      column-gap: 128px;
+      padding-block: 30px;
+    }
+  }
+
+  &-head {
+    font-weight: 700;
+
+    @include v.mq() {
+      width: 100px;
+    }
+  }
+
+  &-description {
+    a {
+      text-decoration-line: underline;
+      color: v.$c-main;
+      font-family: v.$f-en;
+    }
+
+    .en {
+      font-family: v.$f-en;
+    }
+  }
+
+  ul {
+    .inner-list {
+      list-style: circle;
+      margin-left: 40px;
+    }
+  }
+}

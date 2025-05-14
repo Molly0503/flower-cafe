@@ -1,0 +1,77 @@
+@use '../foundation/variables'as v;
+
+.cover {
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('#{v.$pass}cover_sp.jpg') center / cover;
+
+  @include v.mq() {
+    height: 680px;
+    background: url('#{v.$pass}cover_pc.jpg') center / cover;
+  }
+
+  &-title {
+    text-align: center;
+
+    h1 {
+      font-family: v.$f-en;
+      color: v.$c-main;
+      font-weight: 400;
+      text-shadow: 0 3px 6px #f2b7b7;
+      font-size: 10vw;
+      @include v.rem(45);
+
+      @include v.mq() {
+        @include v.rem(70);
+      }
+
+      .small {
+        @include v.rem(32);
+
+        @include v.mq() {
+          @include v.rem(54);
+        }
+      }
+
+    }
+
+    p {
+      @include v.rem(14);
+
+      @include v.mq() {
+        @include v.rem(18);
+      }
+    }
+  }
+}
+
+.page-cover {
+  height: 160px;
+  background: url('#{v.$pass}page_cover_sp.jpg') center / cover;
+
+  @include v.mq() {
+    height: 200px;
+    background: url('#{v.$pass}page_cover_pc.jpg') center / cover;
+  }
+
+  &-title {
+    h1 {
+      @include v.rem(32);
+      line-height: 1;
+
+      @include v.mq() {
+        @include v.rem(48);
+      }
+    }
+
+    p {
+      @include v.rem(11);
+
+      @include v.mq() {
+        @include v.rem(14);
+      }
+    }
+  }
+}

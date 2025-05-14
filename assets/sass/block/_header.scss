@@ -1,0 +1,123 @@
+@use '../foundation/variables'as v;
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 15px;
+  z-index: 100;
+  
+  @include v.mq() {
+    height: 56px;
+    align-items: flex-end;
+    padding-inline: 30px;
+  }
+
+  &-logo {
+    line-height: 1;
+  }
+
+  &-img {
+    width: 110px;
+    height: auto;
+
+    @include v.mq() {
+      width: 170px;
+    }
+  }
+
+  .hamburger-button {
+    background-color: v.$c-main;
+    border-radius: 0 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    z-index: 999;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+
+    &-bar {
+      background-color: v.$c-white;
+      width: 26px;
+      height: 2px;
+      transition: all 0.6s;
+    }
+
+    &-open {
+      .hamburger-button-bar {
+        &-1st {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        &-2nd {
+          opacity: 0;
+        }
+
+        &-3rd {
+          transform: translateY(-8px) rotate(-45deg);
+
+        }
+      }
+    }
+
+    @include v.mq() {
+      display: none;
+    }
+  }
+
+  .hamburger-menu {
+    font-family: v.$f-en;
+
+    @include v.mq() {
+      a {
+        color: v.$c-black;
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+
+    @include v.mq(sp) {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100vw;
+      background-color: v.$c-main;
+      transition: all 0.6s;
+      visibility: hidden;
+      opacity: 0;
+
+      &-active {
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &-list {
+      display: flex;
+
+      @include v.mq() {
+        @include v.rem(20);
+        column-gap: 35px;
+      }
+
+      @include v.mq(sp) {
+        @include v.rem(24);
+        height: 100vh;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

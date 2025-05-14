@@ -1,0 +1,32 @@
+@use '../foundation/variables'as v;
+
+.access {
+  @include v.rem(15);
+
+  &-text {
+    margin-bottom: 30px;
+
+    @include v.mq() {
+      @include v.rem(16);
+    }
+  }
+
+  &-add {
+    margin-bottom: 21px;
+  }
+
+  &-code {
+    font-family: v.$f-en;
+  }
+
+  &-map {
+    iframe {
+      width: 100%;
+      height: 350px;
+
+      @include v.mq() {
+        height: 480px;
+      }
+    }
+  }
+}

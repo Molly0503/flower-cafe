@@ -1,0 +1,46 @@
+@use '../foundation/variables'as v;
+
+.menu {
+  &-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 15px;
+
+    @include v.mq() {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px 30px;
+    }
+  }
+    &-item {
+      &-img {
+        cursor: pointer;
+        overflow: hidden;
+        
+        img {
+          transition: transform .6s ease;
+          width: 100%;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+      }
+
+      &-name {
+        @include v.rem(13);
+        color: v.$c-main;
+
+        @include v.mq() {
+          @include v.rem(16);
+        }
+      }
+
+      &-price {
+        @include v.rem(12);
+
+        @include v.mq() {
+          @include v.rem(14);
+        }
+      }
+    }
+  }
