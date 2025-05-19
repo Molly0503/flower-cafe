@@ -156,9 +156,9 @@ ul {
 
 .cover {
   height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  align-content: center;
+  justify-items: center;
   background: url("../images/cover_sp.jpg") center/cover;
 }
 @media screen and (min-width: 768px) {
@@ -175,29 +175,13 @@ ul {
   color: #c32d4d;
   font-weight: 400;
   text-shadow: 0 3px 6px #f2b7b7;
-  font-size: 10vw;
-  font-size: 2.8125rem;
-}
-@media screen and (min-width: 768px) {
-  .cover-title h1 {
-    font-size: 4.375rem;
-  }
+  font-size: clamp(45px, 10vw, 70px);
 }
 .cover-title h1 .small {
-  font-size: 2rem;
-}
-@media screen and (min-width: 768px) {
-  .cover-title h1 .small {
-    font-size: 3.375rem;
-  }
+  font-size: clamp(32px, 7vw, 50px);
 }
 .cover-title p {
-  font-size: 0.875rem;
-}
-@media screen and (min-width: 768px) {
-  .cover-title p {
-    font-size: 1.125rem;
-  }
+  font-size: clamp(14px, 2.5vw, 18px);
 }
 
 .page-cover {
@@ -229,17 +213,13 @@ ul {
 }
 
 .profile-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 20px;
 }
 @media screen and (min-width: 768px) {
   .profile-container {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-.profile-left {
-  flex: 1;
 }
 .profile-left-top {
   margin-bottom: 32px;
@@ -270,16 +250,10 @@ ul {
 .profile-left-bottom-text {
   font-size: 0.875rem;
 }
-.profile-right {
-  flex: 1;
-}
 @media screen and (min-width: 768px) {
   .profile-right {
     margin-left: 50px;
   }
-}
-.profile-right img {
-  width: 100%;
 }
 
 .fade-in {

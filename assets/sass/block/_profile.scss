@@ -2,18 +2,15 @@
 
 .profile {
   &-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     row-gap: 20px;
 
     @include v.mq() {
-      flex-direction: row;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   &-left {
-    flex: 1;
-
     &-top {
       margin-bottom: 32px;
 
@@ -51,14 +48,8 @@
   }
 
   &-right {
-    flex: 1;
-
     @include v.mq() {
       margin-left: 50px;
-    }
-
-    img {
-      width: 100%;
     }
   }
 }

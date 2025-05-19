@@ -2,9 +2,9 @@
 
 .cover {
   height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  align-content: center;
+  justify-items: center;
   background: url('#{v.$pass}cover_sp.jpg') center / cover;
 
   @include v.mq() {
@@ -20,29 +20,15 @@
       color: v.$c-main;
       font-weight: 400;
       text-shadow: 0 3px 6px #f2b7b7;
-      font-size: 10vw;
-      @include v.rem(45);
-
-      @include v.mq() {
-        @include v.rem(70);
-      }
-
+      font-size: clamp(45px, 10vw, 70px);
+      
       .small {
-        @include v.rem(32);
-
-        @include v.mq() {
-          @include v.rem(54);
-        }
+        font-size: clamp(32px, 7vw, 50px);
       }
-
     }
-
+    
     p {
-      @include v.rem(14);
-
-      @include v.mq() {
-        @include v.rem(18);
-      }
+      font-size: clamp(14px, 2.5vw, 18px);
     }
   }
 }
